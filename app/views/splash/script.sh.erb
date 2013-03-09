@@ -65,7 +65,7 @@ if [ ! -f /opt/boxen/repo/.snapshot ]; then
   mkdir -p /opt/boxen/repo
   cd /opt/boxen/repo
 
-  curl --progress-bar -L '<%= view.download_url %>' | tar -xz - --strip-components 1 && touch .snapshot
+  git clone git@github.com:<%= view.repo_name %>.git . && touch .snapshot
 fi
 
 echo "
